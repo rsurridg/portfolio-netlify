@@ -39,7 +39,7 @@ export default function LandingPage() {
             <span className={styles.badge}><span className={styles.badgeDot} />Available for projects</span>
             <h1 className={styles.h1}>Creating at the intersection.</h1>
             <p className={styles.lede}>
-              I'm <strong>Rachel</strong> — a software engineer, artist, writer, and aspiring cowgirl in Houston, TX. I'm interested in celebrating stories, and helping you tell yours.
+              I&apos;m <strong>Rachel</strong> — a software engineer, artist, writer, and aspiring cowgirl in Houston, TX. I&apos;m interested in celebrating stories, and helping you tell yours.
             </p>
             <div className={styles.ctaRow}>
               <a href="#work" className={styles.buttonPrimary}>See my work</a>
