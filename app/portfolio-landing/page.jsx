@@ -8,7 +8,7 @@ export default function NavigationPage() {
       <h1 className={styles.heading}>Explore My Work</h1>
       <div className={styles.grid}>
 
-        <Link href="/traditional" className={styles.tile}>
+        <Link href="/traditional-art" className={styles.tile}>
           <div className={styles.imageWrapper}>
             <Image
               src="/images/traditional.jpg"

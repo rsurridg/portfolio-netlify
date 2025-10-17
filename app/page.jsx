@@ -20,17 +20,15 @@ export default function LandingPage() {
   return (
     <main className={styles.site}>
 
-      {/* Banner (image/video background + centered quote) */}
-      <section className={styles.banner} aria-label="Inspirational banner">
-          <div className={styles.bannerMedia}>
-          </div>
-          <div className={styles.bannerOverlay} />
+      <div className={styles.bannerMedia}>
+        <div className={styles.fadeOnScroll}>
           <div className={styles.bannerInner}>
-          <blockquote className={styles.bannerQuote}>
-            <p>“The sweetest thing in all my life has been the longing - to find the place where all the beauty came from. - C.S. Lewis”</p>
-          </blockquote>
+            <blockquote className={styles.bannerQuote}>
+              <h1>“Don&apos;t only practice your art, but force your way into its secrets, for it and knowledge can raise men to the divine." - Beethoven</h1>
+            </blockquote>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Hero */}
       <section className={styles.hero}>
@@ -118,11 +116,11 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
-          <p>© {new Date().getFullYear()} Your Name</p>
+          <p>© {new Date().getFullYear()} Rachel Rathinaraj</p>
+          <p>Soli Deo Gloria</p>
           <div className={styles.footerLinks}>
             <a href="https://instagram.com/merakiae.art">Instagram</a>
-            <a href="https://github.com/yourhandle">GitHub</a>
-            <a href="mailto:you@domain.com">Email</a>
+            <a href="mailto:merakiaeart@gmail.com">Email</a>
           </div>
         </div>
       </footer>

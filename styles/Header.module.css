@@ -1,7 +1,11 @@
 .header {
   font-family: "Libre Baskerville", Georgia, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: transparent;
+  z-index: 1000;
+  background: transparent; /* remove background if you want banner visible through it */
   padding: 2rem 0;
 }
 
@@ -13,7 +17,7 @@
 }
 
 .navItem {
-  color: #4a1d1d;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
@@ -27,14 +31,13 @@
 
 /* White dot separators for links, but skip last one (Contact) */
 .navItem:not(:last-child)::after {
-  color: #4a1d1d;
+  color: white;
   content: "•";
-  opacity: 0.6;
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.8rem;
+  font-size: 2.0rem;
 }
 
 /* Logo behaves like a nav item now */
@@ -43,4 +46,13 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  z-index:100000;
+}
+
+/* constrain the image itself */
+.logo {
+  display: block;
+  height: 120px;        /* control visual height */
+  width: auto;         /* preserve aspect ratio */
+  object-fit: contain; /* just in case */
 }

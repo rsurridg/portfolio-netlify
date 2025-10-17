@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/netlify-logo.svg";
+import logo from "public/logo.png";
 import styles from "../styles/Header.module.css";
 
 export function Header() {
@@ -16,7 +16,7 @@ export function Header() {
         </Link>
 
         {/* Logo now takes up one grid column */}
-        <Link href="/" className={styles.logoLink}>
+        <Link href="/" className={[styles.logoLink, styles.navItem].join(' ')}>
           <Image src={logo} alt="Site logo" className={styles.logo} priority />
         </Link>
 
