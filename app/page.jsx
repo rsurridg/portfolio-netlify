@@ -24,7 +24,7 @@ export default function LandingPage() {
         <div className={styles.fadeOnScroll}>
           <div className={styles.bannerInner}>
             <blockquote className={styles.bannerQuote}>
-              <h1>“Don&apos;t only practice your art, but force your way into its secrets, for it and knowledge can raise men to the divine." - Beethoven</h1>
+              <h1>&quot;Don&apos;t only practice your art, but force your way into its secrets, for it and knowledge can raise men to the divine.&quot; - Beethoven</h1>
             </blockquote>
           </div>
         </div>
@@ -99,8 +99,8 @@ export default function LandingPage() {
       {/* Contact */}
       <section id="contact" className={styles.sectionNarrow}>
         <div className={styles.centerText}>
-          <h3 className={styles.h3}>Let’s build something great</h3>
-          <p className={styles.copy}>Drop a line about your project, timeline, and goals. I’ll get back within 24 hours.</p>
+          <h3 className={styles.h3}>Let&quot;s build something great</h3>
+          <p className={styles.copy}>Drop a line about your project, timeline, and goals. I&quot;ll get back within 24 hours.</p>
         </div>
         <form action="https://formspree.io/f/yourid" method="POST" className={styles.form}>
           <div className={styles.formRowTwo}>
