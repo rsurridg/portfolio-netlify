@@ -1,3 +1,6 @@
 [build]
-  publish = "."
+  publish = "site"
   command = ""
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
