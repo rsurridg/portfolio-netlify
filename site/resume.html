@@ -74,6 +74,21 @@
       filter: invert(1);
     }
 
+    @media (max-width: 600px) {
+      .nav {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1rem .5rem;
+      }
+      .nav-logo {
+        grid-column: 1 / -1;
+        order: -1;
+        margin-bottom: .25rem;
+      }
+      .nav-logo img { height: 55px; }
+      .nav a { font-size: .8rem; }
+      .nav a:not(:last-child)::after { display: none; }
+    }
+
     /* ── Page wrapper ────────────────────────────────── */
     .page {
       max-width: 1100px;
