@@ -47,8 +47,7 @@ const CARDS = [
 
   { type:'code', col:1, category:'code',
     title:'This Site',
-    body:'Pure HTML/CSS/JS portfolio. No framework, no build step, $0/month hosting.',
-    pills:['HTML', 'CSS', 'Netlify'],
+    body:'Pure HTML/CSS/JS portfolio site. Clean, static, simple. $8/year for domain, $0/month for hosting.',
     link:'https://github.com/rsurridg/portfolio-netlify',
     linkText:'View on GitHub →' },
 
@@ -166,15 +165,11 @@ function renderGalleryCard(c) {
 }
 
 function renderCodeCard(c) {
-  const pills = c.pills.map(p =>
-    `<span class="pill" style="border-color:rgba(253,246,227,.25);background:rgba(253,246,227,.08);color:var(--bg);">${p}</span>`
-  ).join('');
   return `
     <div class="card work-card col-${c.col} dark" data-category="${c.category}">
       <div class="card-eyebrow">${EYEBROW[c.category]}</div>
       <div class="card-title">${c.title}</div>
       <div class="card-body">${c.body}</div>
-      <div class="pills">${pills}</div>
       <a class="card-link" href="${c.link}" target="_blank" rel="noopener">${c.linkText}</a>
     </div>`;
 }
