@@ -87,7 +87,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: url('images/cowgirl.jpg') center top / cover no-repeat;
+      background: url('images/cowgirl.jpg') center 38% / cover no-repeat;
     }
 
     .banner::before {
@@ -164,11 +164,12 @@
     }
 
     .lede {
-      font-family: var(--mono);
-      font-size: 1rem;
-      color: var(--ink-dim);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink);
       margin-top: 1rem;
       max-width: 54ch;
+      line-height: 1.7;
     }
 
     .cta-row {
@@ -206,10 +207,71 @@
     }
     .btn-ghost:hover { border-color: var(--ink); }
 
-    .tech-row {
-      margin-top: .6rem;
-      font-size: .82rem;
+    /* ── Skills section ──────────────────────────────── */
+    .skills-label {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .skills {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .skill-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      background: rgba(255,255,255,.45);
+    }
+
+    .skill-card-label {
+      font-family: var(--serif);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
       color: var(--ink-dim);
+      margin-bottom: .4rem;
+    }
+
+    .skill-card-sub {
+      font-family: var(--serif);
+      font-size: .88rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: .8rem;
+      color: var(--ink);
+      background: var(--bg);
     }
 
     .hero-media .frame {
@@ -403,24 +465,74 @@
 
   <!-- ── Hero ─────────────────────────────────────────── -->
   <div class="hero">
+    <div class="hero-media">
+      <div class="frame">
+        <img src="images/hero.jpg" alt="Rachel Rathinaraj" />
+      </div>
+    </div>
     <div class="hero-text">
       <span class="badge"><span class="badge-dot"></span>Available for projects</span>
       <h1>Creating at the intersection.</h1>
       <p class="lede">
-        I'm <strong>Rachel</strong> — a software engineer, artist, writer, and aspiring cowgirl in Houston, TX.
+        I'm <strong>Rachel</strong> — a software engineer, artist, writer, and aspiring cowgirl located on the Gulf Coast of Texas.
         I'm interested in celebrating stories, and helping you tell yours.
       </p>
       <div class="cta-row">
         <a href="#work" class="btn-primary">See my work</a>
         <a href="#contact" class="btn-ghost">Get in touch</a>
       </div>
-      <p class="tech-row">Code: Fullstack Web Dev · JavaScript · Custom Elements · HTML · CSS · C++</p>
-      <p class="tech-row">Art: Graphite · Oil · Charcoal · Digital</p>
-      <p class="tech-row">The Intersection: Lightroom · Photoshop · Premiere Pro · Procreate · Instagram</p>
     </div>
-    <div class="hero-media">
-      <div class="frame">
-        <img src="images/hero.jpg" alt="Rachel's work" />
+  </div>
+
+  <!-- ── Skills ───────────────────────────────────────── -->
+  <div class="skills">
+    <p class="skills-label">My toolbox:</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-label">Web Dev</div>
+        <p class="skill-card-sub">I specialize in sustainable, cost-effective portfolio sites for creators — including $0 monthly-cost static sites (like this one!)</p>
+        <div class="skill-pills">
+          <span class="pill">Fullstack Web Dev</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Custom Elements</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">C++</span>
+          <span class="pill">Git</span>
+          <span class="pill">WordPress</span>
+          <span class="pill">Wix</span>
+          <span class="pill">Squarespace</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Visual Art</div>
+        <p class="skill-card-sub">I'm a visual artist trained in traditional mediums and classic portraiture, with the digital range to match.</p>
+        <div class="skill-pills">
+          <span class="pill">Graphite</span>
+          <span class="pill">Oil</span>
+          <span class="pill">Watercolor</span>
+          <span class="pill">Charcoal</span>
+          <span class="pill">Pastel</span>
+          <span class="pill">Mixed Media</span>
+          <span class="pill">Digital Illustration and Painting</span>
+          <span class="pill">Digital Photography</span>
+          <span class="pill">Procreate</span>
+          <span class="pill">Photoshop</span>
+          <span class="pill">Lightroom</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Other Tools</div>
+        <div class="skill-pills">
+          <span class="pill">Premiere Pro</span>
+          <span class="pill">Instagram</span>
+          <span class="pill">Reels</span>
+          <span class="pill">Substack</span>
+          <span class="pill">Creative Writing</span>
+          <span class="pill">Content Writing</span>
+          <span class="pill">Manuscript Formatting</span>
+          <span class="pill">Editorial Services</span>
+        </div>
       </div>
     </div>
   </div>
@@ -472,19 +584,7 @@
     </div>
   </section>
 
-  <!-- ── About ─────────────────────────────────────────── -->
-  <section id="about" class="narrow">
-    <div class="section-head">
-      <h2>About</h2>
-    </div>
-    <p style="color: var(--ink-dim); font-family: var(--mono);">
-      Houston-based creative at the intersection of code and craft.
-      I build things for the web and make things with my hands — graphite portraits, oil paintings,
-      digital composites. I believe good work tells a true story.
-    </p>
-  </section>
-
-  <!-- ── Contact ───────────────────────────────────────── -->
+<!-- ── Contact ───────────────────────────────────────── -->
   <section id="contact" class="narrow">
     <div class="contact-intro">
       <h2>Let's build something great</h2>
@@ -505,7 +605,7 @@
   <!-- ── Footer ───────────────────────────────────────── -->
   <footer>
     <div class="footer-inner">
-      <p>© <span id="yr"></span> Rachel Rathinaraj</p>
+      <p>© <span id="yr"></span> Merakiae Art</p>
       <p>Soli Deo Gloria</p>
       <div class="footer-links">
         <a href="https://instagram.com/merakiae.art" target="_blank" rel="noopener">Instagram</a>

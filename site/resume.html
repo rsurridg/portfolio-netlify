@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résumé — Rachel Rathinaraj</title>
+  <link rel="icon" href="favicon.svg" sizes="any" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cutive+Mono&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #fdf6e3;
+      --ink:     #4a1d1d;
+      --ink-dim: #7a4a3a;
+      --line:    #e5d8c8;
+      --tint:    rgba(200,169,122,.12);
+      --radius:  16px;
+      --serif:   "Libre Baskerville", Georgia, serif;
+      --mono:    "Cutive Mono", monospace;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav (reused from index) ─────────────────────── */
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      text-align: center;
+      padding: 1.75rem 1rem;
+      font-family: var(--serif);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav a:hover { text-decoration: underline; }
+
+    .nav a:not(:last-child)::after {
+      content: "•";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+      color: var(--line);
+      pointer-events: none;
+    }
+
+    .nav-logo img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      filter: invert(1);
+    }
+
+    /* ── Page wrapper ────────────────────────────────── */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-label {
+      font-family: var(--mono);
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Bento grid ──────────────────────────────────── */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+      gap: .75rem;
+    }
+
+    /* ── Base card ───────────────────────────────────── */
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      background: rgba(255,255,255,.4);
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .card.dark {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .card.tint {
+      background: var(--tint);
+    }
+
+    /* span helpers */
+    .col-2 { grid-column: span 2; }
+    .col-3 { grid-column: span 3; }
+    .col-4 { grid-column: span 4; }
+    .row-2 { grid-row: span 2; }
+
+    /* ── Card type styles ────────────────────────────── */
+    .card-eyebrow {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+    }
+
+    .card.dark .card-eyebrow { color: rgba(253,246,227,.6); }
+
+    .card-eyebrow.large {
+      font-family: var(--mono);
+      font-size: .88rem;
+      font-weight: 400;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+    }
+
+    .card.dark .card-eyebrow.large { color: rgba(253,246,227,.7); }
+
+    .card-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .card-title.xl {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    }
+
+    .card-body {
+      font-size: .88rem;
+      color: var(--ink-dim);
+      line-height: 1.65;
+    }
+
+    .card.dark .card-body { color: rgba(253,246,227,.75); }
+
+    .card-meta {
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--ink-dim);
+      margin-top: auto;
+    }
+
+    .card.dark .card-meta { color: rgba(253,246,227,.5); }
+
+    /* Status badge */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .78rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      flex-shrink: 0;
+    }
+
+    /* Pill tags */
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: .25rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: .75rem;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    .card.dark .pill {
+      border-color: rgba(253,246,227,.25);
+      background: rgba(253,246,227,.08);
+      color: var(--bg);
+    }
+
+    /* Quote style */
+    .quote-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .quote-attr {
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--ink-dim);
+      margin-top: .5rem;
+    }
+
+    /* Links */
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .85rem;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+      transition: border-color .2s;
+    }
+    .card-link:hover { border-color: var(--ink); }
+
+    .card.dark .card-link {
+      color: var(--bg);
+      border-color: rgba(253,246,227,.3);
+    }
+    .card.dark .card-link:hover { border-color: var(--bg); }
+
+    /* Big name */
+    .name-sub {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--ink-dim);
+      margin-top: .25rem;
+    }
+
+    /* Divider line inside card */
+    .card-rule {
+      width: 100%;
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: .5rem 0;
+    }
+
+    .card.dark .card-rule { border-color: rgba(253,246,227,.15); }
+
+    /* Art image placeholder */
+    .art-frame {
+      flex: 1;
+      min-height: 140px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .art-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .col-3 { grid-column: span 2; }
+      .col-4 { grid-column: span 2; }
+    }
+
+    @media (max-width: 480px) {
+      .bento { grid-template-columns: 1fr; }
+      .col-2, .col-3, .col-4 { grid-column: span 1; }
+      .row-2 { grid-row: span 1; }
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 0 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .82rem;
+      color: var(--ink-dim);
+    }
+
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { text-decoration: none; color: inherit; }
+    .footer-links a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="index.html#work">Portfolio</a>
+    <a href="index.html#about">About</a>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Rachel Rathinaraj" />
+    </a>
+    <a href="resume.html" style="font-weight:700;">Résumé</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="page">
+    <p class="page-label">Résumé</p>
+
+    <div class="bento">
+
+      <!-- By Day -->
+      <div class="card col-2" style="background: rgba(200,169,122,.2);">
+        <div class="card-eyebrow large">☀ By Day</div>
+        <div class="card-title">Senior Software Engineer at a global scientific computing software company.</div>
+        <div class="card-body">Fullstack web developer with a focus on performance, memory, and scalable multi-window architectures.</div>
+        <div class="card-meta">Aug 2020 – Present</div>
+      </div>
+
+      <!-- By Night -->
+      <div class="card dark col-2">
+        <div class="card-eyebrow large">☾ By Night</div>
+        <div class="card-title">Portrait artist & writer, telling and celebrating stories.</div>
+        <div class="card-meta">Freelance · Ongoing</div>
+      </div>
+
+      <!-- Education + Awards -->
+      <div class="card col-4">
+        <div class="card-eyebrow">Education</div>
+        <div class="card-title">B.S. Biomedical Engineering</div>
+        <div class="card-body">Purdue University · 2016 – 2020</div>
+        <hr class="card-rule" />
+        <div class="card-eyebrow">Awards & Honors</div>
+        <div class="card-body" style="margin-top:.25rem;">Top 100 Student · Evenbeck Scholars Outstanding Mentor Award · Division of Undergraduate Education Student of the Year · Biomedical Engineering Outstanding Student Scholarship</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© <span id="yr"></span> Merakiae Art</p>
+      <p>Soli Deo Gloria</p>
+      <div class="footer-links">
+        <a href="https://instagram.com/merakiae.art" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:merakiaeart@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
