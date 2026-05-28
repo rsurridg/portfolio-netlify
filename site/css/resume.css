@@ -1,0 +1,88 @@
+/* ── Resume-specific card variants ──────────────────────────── */
+
+/* Large eyebrow (used in section header cards) */
+.card-eyebrow.large {
+  font-family: var(--mono);
+  font-size: .88rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.card.dark .card-eyebrow.large { color: rgba(253,246,227,.7); }
+
+/* XL title (name card) */
+.card-title.xl {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+/* Larger base title on resume */
+.card-title { font-size: 1.35rem; line-height: 1.2; }
+
+/* Status badge (available / not) */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .78rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+/* Pull-quote style */
+.quote-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.quote-attr {
+  font-family: var(--mono);
+  font-size: .75rem;
+  color: var(--ink-dim);
+  margin-top: .5rem;
+}
+
+/* Supporting name line */
+.name-sub {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink-dim);
+  margin-top: .25rem;
+}
+
+/* Horizontal rule inside a card */
+.card-rule {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: .5rem 0;
+}
+
+.card.dark .card-rule { border-color: rgba(253,246,227,.15); }
+
+/* Art image frame on resume */
+.art-frame {
+  flex: 1;
+  min-height: 140px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.art-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

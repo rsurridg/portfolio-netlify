@@ -1,0 +1,99 @@
+/* ── Filter bar ──────────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.75rem;
+}
+
+.filter-btn {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: .78rem;
+  font-family: var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.filter-btn:hover { border-color: var(--ink); }
+
+.filter-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+/* ── Work card interactions ──────────────────────────────────── */
+.work-card.hidden { display: none; }
+
+.work-card[data-img] { cursor: pointer; }
+.work-card[data-img]:hover .img-frame img { opacity: .88; transition: opacity .2s; }
+
+/* ── Lightbox ────────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,10,10,.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 48px rgba(0,0,0,.6);
+}
+
+.lightbox-caption {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.lightbox-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: #fdf6e3;
+}
+
+.lightbox-meta {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: rgba(253,246,227,.5);
+  margin-top: .3rem;
+  letter-spacing: .06em;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: rgba(253,246,227,.6);
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: .25rem;
+}
+
+.lightbox-close:hover { color: #fdf6e3; }

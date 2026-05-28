@@ -1,0 +1,197 @@
+/* ── Page intro ──────────────────────────────────────────────── */
+.wwm-intro {
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.wwm-intro h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin-bottom: .75rem;
+}
+
+.wwm-intro p {
+  font-size: 1rem;
+  color: var(--ink-dim);
+  line-height: 1.7;
+}
+
+/* ── Services grid ───────────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  background: rgba(255,255,255,.4);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.service-card.tint { background: var(--tint); }
+
+.service-icon {
+  font-size: 1.4rem;
+  margin-bottom: .25rem;
+}
+
+.service-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.service-body {
+  font-size: .88rem;
+  color: var(--ink-dim);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .83rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: border-color .2s;
+  margin-top: .5rem;
+  width: fit-content;
+}
+.service-link:hover { border-color: var(--ink); }
+
+/* ── Section headings ────────────────────────────────────────── */
+.wwm-section {
+  margin-bottom: 3.5rem;
+}
+
+.wwm-section-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: -.01em;
+}
+
+/* ── FAQ accordion ───────────────────────────────────────────── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.4);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: .98rem;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  color: var(--ink-dim);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after { content: "−"; }
+
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-answer {
+  padding: 1.1rem 1.5rem 1.25rem;
+  font-size: .88rem;
+  color: var(--ink-dim);
+  line-height: 1.75;
+}
+
+.faq-answer p + p  { margin-top: .75rem; }
+.faq-answer strong { color: var(--ink); }
+
+.faq-answer ul {
+  margin: .6rem 0 .6rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.faq-answer ol {
+  margin: .75rem 0 .75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.faq-answer ol li,
+.faq-answer ul li {
+  line-height: 1.65;
+}
+
+/* ── Contact form section ────────────────────────────────────── */
+.wwm-form-wrap {
+  max-width: 680px;
+}
+
+.inquiry-select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: .95rem;
+  font-family: inherit;
+  background: rgba(255,255,255,.6);
+  color: var(--ink);
+  outline: none;
+  appearance: none;
+  transition: border-color .2s, box-shadow .2s;
+  cursor: pointer;
+}
+
+.inquiry-select:focus {
+  border-color: var(--ink-dim);
+  box-shadow: 0 0 0 3px rgba(74,29,29,.08);
+}
+
+.form-hint {
+  font-size: .78rem;
+  font-family: var(--mono);
+  color: var(--ink-dim);
+  margin-top: .35rem;
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
